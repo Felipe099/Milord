@@ -41,29 +41,29 @@ const swiper = new Swiper('.swiper-container', {
   keyboard: true,
   breakpoints: {
     767: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       setWrapperSize: true
     }
   }
 })
 
 /* ScrollReveal: Mostrar elementos quando der scroll na página */
-const scrollReveal = ScrollReveal({
-  origin: 'top',
-  distance: '30px',
-  duration: 700,
-  reset: true
-})
+// const scrollReveal = ScrollReveal({
+//   origin: 'top',
+//   distance: '30px',
+//   duration: 700,
+//   reset: true
+// })
 
-scrollReveal.reveal(
-  `#home .image, #home .text,
-  #about .image, #about .text,
-  #services header,
-  #testimonials header, #testimonials .testimonials,
-  #contact .text, #contact .links
-  `,
-  { interval: 100 }
-)
+// scrollReveal.reveal(
+//   `#home .image, #home .text,
+//   #about .image, #about .text,
+//   #services header,
+//   #testimonials header, #testimonials .testimonials,
+//   #contact .text, #contact .links
+//   `,
+//   { interval: 100 }
+// )
 
 /* Botão voltar para o topo */
 const backToTopButton = document.querySelector('.back-to-top')
