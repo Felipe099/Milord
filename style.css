@@ -249,6 +249,20 @@ nav.show div.icon-close {
     top: 1.5rem;
 }
 
+/*=========== RODAPE =====================*/
+
+#rodape {
+    padding: 0.7rem;
+    background: #919090;
+}
+
+#rodape p{
+    font: 700 1rem var(--body-font);
+    text-align: center;
+    color: black;
+}
+
+
 /*=========== HOME =====================*/
 #home {
     background-image: url(ASSETS/fotos/background.jpg);
