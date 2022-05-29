@@ -23,8 +23,8 @@ img {
     /* colors */
     --hue: #edbe31;
     /* hsl color mode*/
-    --base-color: hsl(var(--hue) 36% 57%);
-    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color: rgb(2, 2, 2);
+    --base-color-second: rgb(2, 2, 2);
     --base-color-alt: #edbe31;
     --title-color: #edbe31;
     --text-color: hsl(0 0% 46%);
@@ -132,7 +132,7 @@ body {
 }
 
 #header.scroll {
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 12px rgb(2, 2, 2);
 }
 
 #header .logo img {
@@ -143,7 +143,7 @@ body {
 
 .logo {
     font: 700 1.31rem 'Poppins', sans-serif;
-    color: black;
+    color: rgb(2, 2, 2);
 }
 
 .logo span {
@@ -256,12 +256,11 @@ nav.show div.icon-close {
     background: #919090;
 }
 
-#rodape p{
+#rodape p {
     font: 700 1rem var(--body-font);
     text-align: center;
-    color: black;
+    color: rgb(2, 2, 2);
 }
-
 
 /*=========== HOME =====================*/
 #home {
@@ -326,7 +325,7 @@ nav.show div.icon-close {
     position: relative;
 }
 
-#about .image::before {
+/* #about .image::before {
     content: '';
     height: 100%;
     width: 100%;
@@ -335,7 +334,7 @@ nav.show div.icon-close {
     top: -8.3%;
     left: -33%;
     z-index: 0;
-}
+} */
 
 #about .image img {
     position: relative;
@@ -382,11 +381,11 @@ nav.show div.icon-close {
 .card .title {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
-    color: black;
+    color: rgb(2, 2, 2);
 }
 
 .card p {
-    color: black;
+    color: rgb(2, 2, 2);;
 }
 
 .butto1 {
@@ -411,7 +410,8 @@ nav.show div.icon-close {
 }
 
 #products img {
-  width: 50%;
+    width: 10%;
+    border-radius: 25rem;
 }
 
 /* swiper */
@@ -426,7 +426,7 @@ nav.show div.icon-close {
 }
 
 .swiper-pagination-bullet-active {
-    background: var(--base-color);
+    background: white;
 }
 
 /*=========== TESTIMONIALS =====================*/
@@ -493,6 +493,57 @@ nav.show div.icon-close {
 
 .swiper-pagination-bullet-active {
     background: var(--base-color);
+}
+
+/*=========== PROMOTION =====================*/
+
+#promotion {
+    background-image: url(ASSETS/fotos/background.jpg);
+}
+
+/* #promotion {
+    height: 100%; 
+     display: grid;
+    justify-content: space-evenly;
+    grid-auto-flow: column;
+    align-items: center;
+} */
+
+#promotion .countdown li {
+    list-style: none;
+}
+
+#promotion .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+#promotion .countdown li {
+    font-family: Poppins;
+    text-align: center;
+    color: hsl(0 0% 98%);
+}
+
+#promotion .countdown .ponto {
+    font-family: Poppins;
+    color: hsl(0 0% 98%);
+    font-size: 2.5rem;
+    margin-top: 15px;
+}
+
+#promotion .countdown li div {
+    font-family: Poppins;
+    font-weight: 100;
+    color: hsl(0 0% 98%);
+}
+
+#promotion .countdown li span {
+    font-family: Poppins;
+    color: hsl(0 0% 98%);
+    font-size: 2.5rem;
 }
 
 /*=========== CONTACT =====================*/
@@ -642,7 +693,7 @@ footer .social a:hover {
 
     nav .menu ul li a.title {
         font: 400 1rem var(--body-font);
-        color: black;
+        color: rgb(2, 2, 2);;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -705,24 +756,27 @@ footer .social a:hover {
 
     /* Products */
     #products .container {
-      width: 720px;
-      margin-left: auto;
-      margin-right: auto;
+        width: 720px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #products .text {
-      align-items: center;
-      display: flex;
+        align-items: center;
+        display: flex;
     }
 
     #products p {
-      padding: 2rem;
+        padding: 2rem;
     }
 
-    #products img {
-      width: 40%;
+    /* Promotion */
+    #promotion .countdown .ponto {
+        font-size: 5rem;
     }
-
+    #promotion .countdown li span {
+        font-size: 5rem;
+    }
     /* Testimonials */
     #testimonials .container {
         margin-left: auto;
@@ -736,6 +790,9 @@ footer .social a:hover {
     }
     #contact .text {
         max-width: 25rem;
+    }
+    #contact .grid {
+        gap: 25rem;
     }
 
     /* footer */

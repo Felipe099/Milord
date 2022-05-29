@@ -1,51 +1,51 @@
 /* abre e fecha o menu quando clicar no icone: hamburguer e x*/
-const nav = document.querySelector('#header nav')
-const toggle = document.querySelectorAll('nav .toggle')
+const nav = document.querySelector('#header nav');
+const toggle = document.querySelectorAll('nav .toggle');
 
 for (const element of toggle) {
-  element.addEventListener('click', function () {
-    nav.classList.toggle('show')
-  })
+    element.addEventListener('click', function () {
+        nav.classList.toggle('show');
+    });
 }
 
 /* quando clicar em um item do menu, esconder o menu */
-const links = document.querySelectorAll('nav ul li a')
+const links = document.querySelectorAll('nav ul li a');
 
 for (const link of links) {
-  link.addEventListener('click', function () {
-    nav.classList.remove('show')
-  })
+    link.addEventListener('click', function () {
+        nav.classList.remove('show');
+    });
 }
 
 /* mudar o header da pagina quando der scroll */
-const header = document.querySelector('header')
-const navHeight = header.offsetHeight
+const header = document.querySelector('header');
+const navHeight = header.offsetHeight;
 
 function changeHeaderWhenScroll() {
-  if (window.screenY >= navHeight) {
-    // scroll é maior que a altura do header
-    header.classList.add('scroll')
-  } else {
-    // scroll é menor que a altura do header
-    header.classList.remove('scroll')
-  }
+    if (window.screenY >= navHeight) {
+        // scroll é maior que a altura do header
+        header.classList.add('scroll');
+    } else {
+        // scroll é menor que a altura do header
+        header.classList.remove('scroll');
+    }
 }
 
 /* Testimonials carousel slider swiper */
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  mousewhell: true,
-  keyboard: true,
-  breakpoints: {
-    767: {
-      slidesPerView: 1,
-      setWrapperSize: true
-    }
-  }
-})
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    mousewhell: true,
+    keyboard: true,
+    breakpoints: {
+        767: {
+            slidesPerView: 1,
+            setWrapperSize: true,
+        },
+    },
+});
 
 /* ScrollReveal: Mostrar elementos quando der scroll na página */
 // const scrollReveal = ScrollReveal({
@@ -66,43 +66,59 @@ const swiper = new Swiper('.swiper-container', {
 // )
 
 /* Botão voltar para o topo */
-const backToTopButton = document.querySelector('.back-to-top')
+const backToTopButton = document.querySelector('.back-to-top');
 function backToTop() {
-  if (window.scrollY >= 560) {
-    backToTopButton.classList.add('show')
-  } else {
-    backToTopButton.classList.remove('show')
-  }
+    if (window.scrollY >= 560) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
 }
 
 /* Menu ativo conforme a seção visível na página */
-const sections = document.querySelectorAll('main section[id]')
+const sections = document.querySelectorAll('main section[id]');
 function activateMenuAtCurrentSection() {
-  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4;
 
-  for (const section of sections) {
-    const sectionTop = section.offsetTop
-    const sectionHeight = section.offsetHeight
-    const sectionId = section.getAttribute('id')
+    for (const section of sections) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
 
-    const checkpointStart = checkpoint >= sectionTop
-    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+        const checkpointStart = checkpoint >= sectionTop;
+        const checkpointEnd = checkpoint <= sectionTop + sectionHeight;
 
-    if (checkpointStart && checkpointEnd) {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.add('active')
-    } else {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.remove('active')
+        if (checkpointStart && checkpointEnd) {
+            document
+                .querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.add('active');
+        } else {
+            document
+                .querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.remove('active');
+        }
     }
-  }
 }
+
+/* CONTDOWN */
+
+import Countdown from './contar.js';
+
+const tempoParaNiver = new Countdown('30 May 2022 00:00:01 GMT-0300');
+const tempos = document.querySelectorAll('[data-time]');
+
+function mostrarTempo() {
+    tempos.forEach((tempo, index) => {
+        tempo.innerHTML = tempoParaNiver.total[index];
+    });
+}
+
+mostrarTempo();
+setInterval(mostrarTempo, 1000);
 
 /* When Scroll */
 window.addEventListener('scroll', function () {
-  changeHeaderWhenScroll()
-  backToTop()
-  activateMenuAtCurrentSection()
-})
+    changeHeaderWhenScroll();
+    backToTop();
+    activateMenuAtCurrentSection();
+});
