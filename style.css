@@ -385,7 +385,7 @@ nav.show div.icon-close {
 }
 
 .card p {
-    color: rgb(2, 2, 2);;
+    color: rgb(2, 2, 2);
 }
 
 .butto1 {
@@ -398,36 +398,24 @@ nav.show div.icon-close {
 #products {
     background-image: url(ASSETS/fotos/background.jpg);
 }
+
 #products .container {
     margin-left: 0;
     margin-right: 0;
 }
 
-#products header {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    margin-bottom: 0;
-}
+.swiper{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-#products img {
-    width: 10%;
-    border-radius: 25rem;
-}
-
-/* swiper */
-.swiper-slide {
-    height: auto;
-    padding: 4rem 1rem;
-}
-
-.swiper-pagination-bullet {
-    width: 0.75rem;
-    height: 0.75rem;
-}
-
-.swiper-pagination-bullet-active {
-    background: white;
-}
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
 
 /*=========== TESTIMONIALS =====================*/
 #testimonials {
@@ -439,61 +427,20 @@ nav.show div.icon-close {
     margin-right: 0;
 }
 
-#testimonials header {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    margin-bottom: 0;
-}
+.swiper{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-#testimonials blockquote {
-    padding: 2rem;
-    box-shadow: 0px 0px 12px rgba(136, 83, 83, 0.08);
-    border-radius: 0.25rem;
-}
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+    
 
-#testimonials blockquote p {
-    position: relative;
-    text-indent: 1.875rem;
-    margin-bottom: 1.5rem;
-    color: var(--title-color);
-}
-
-#testimonials blockquote p span {
-    font: 700 2.5rem serif;
-    position: absolute;
-    top: -0.375rem;
-    left: -1.875rem;
-    color: var(--base-color);
-}
-
-#testimonials cite {
-    display: flex;
-    align-items: center;
-    font-style: normal;
-}
-
-#testimonials cite img {
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
-    clip-path: circle();
-    margin-right: 0.5rem;
-}
-
-/* swiper */
-.swiper-slide {
-    height: auto;
-    padding: 4rem 1rem;
-}
-
-.swiper-pagination-bullet {
-    width: 0.75rem;
-    height: 0.75rem;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--base-color);
-}
 
 /*=========== PROMOTION =====================*/
 
@@ -693,7 +640,7 @@ footer .social a:hover {
 
     nav .menu ul li a.title {
         font: 400 1rem var(--body-font);
-        color: rgb(2, 2, 2);;
+        color: rgb(2, 2, 2);
         -webkit-font-smoothing: antialiased;
     }
 
@@ -756,7 +703,6 @@ footer .social a:hover {
 
     /* Products */
     #products .container {
-        width: 720px;
         margin-left: auto;
         margin-right: auto;
     }

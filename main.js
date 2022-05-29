@@ -32,37 +32,43 @@ function changeHeaderWhenScroll() {
 }
 
 /* Testimonials carousel slider swiper */
-const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    pagination: {
-        el: '.swiper-pagination',
-    },
-    mousewhell: true,
-    keyboard: true,
-    breakpoints: {
-        767: {
-            slidesPerView: 1,
-            setWrapperSize: true,
+
+    const swiper = new Swiper('.swiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         },
-    },
-});
+        pagination: {
+          el: '.swiper-pagination',
+          
+        },
+        mousewhell: true,
+        keyboard: true,
+      });
 
 /* ScrollReveal: Mostrar elementos quando der scroll na página */
 // const scrollReveal = ScrollReveal({
-//   origin: 'top',
-//   distance: '30px',
-//   duration: 700,
-//   reset: true
+// origin: 'top',
+// distance: '30px',
+// duration: 700,
+// reset: true
 // })
 
 // scrollReveal.reveal(
-//   `#home .image, #home .text,
-//   #about .image, #about .text,
-//   #services header,
-//   #testimonials header, #testimonials .testimonials,
-//   #contact .text, #contact .links
-//   `,
-//   { interval: 100 }
+// `#home .image, #home .text,
+// #about .image, #about .text,
+// #services header,
+// #testimonials header, #testimonials .testimonials,
+// #contact .text, #contact .links
+// //   `,
+// { interval: 100 }
 // )
 
 /* Botão voltar para o topo */
